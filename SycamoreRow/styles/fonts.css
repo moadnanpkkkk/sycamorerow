@@ -1,0 +1,6 @@
+/* Fonts are bundled locally (SIL Open Font License) so the game works fully offline. */
+@font-face { font-family: 'Cinzel'; font-weight: 400; font-style: normal; font-display: block; src: url('../assets/fonts/cinzel-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Cinzel'; font-weight: 700; font-style: normal; font-display: block; src: url('../assets/fonts/cinzel-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IM Fell English'; font-weight: 400; font-style: normal; font-display: block; src: url('../assets/fonts/im-fell-english-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IM Fell English'; font-weight: 400; font-style: italic; font-display: block; src: url('../assets/fonts/im-fell-english-latin-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'UnifrakturCook'; font-weight: 700; font-style: normal; font-display: block; src: url('../assets/fonts/unifrakturcook-latin-700-normal.woff2') format('woff2'); }

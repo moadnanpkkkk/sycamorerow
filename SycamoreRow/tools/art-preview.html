@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Art preview</title>
+<link rel="stylesheet" href="../styles/fonts.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+  html { font-size: 16px; height: auto; }
+  body { background: var(--ink); color: var(--lamp); font: 12px Georgia, serif; margin: 0; padding: 8px; overflow: auto; height: auto; user-select: auto; }
+  .grid { display: grid; grid-template-columns: repeat(var(--cols, 3), 1fr); gap: 8px; }
+  figure { margin: 0; } canvas { width: 100%; display: block; border: 1px solid var(--line-faint); image-rendering: pixelated; }
+  figcaption { opacity: .7; padding: 2px 0 6px; }
+</style></head>
+<body><div class="grid" id="g"></div>
+<script src="../src/util.js"></script>
+<script src="../src/art/kit.js"></script>
+<script src="../src/art/people.js"></script>
+<script src="../src/art/render.js"></script>
+<script src="../src/art/scenes.js"></script>
+<script src="../src/art/scenes2.js" onerror="0"></script>
+<script>
+  const q = new URLSearchParams(location.search);
+  const only = q.get('ids');
+  document.documentElement.style.setProperty('--cols', q.get('cols') || 3);
+  document.fonts.ready.then(() => {
+    const ids = only ? only.split(',') : Object.keys(SR.Art.painters).filter((k) => k !== 'fallback');
+    const g = document.getElementById('g');
+    ids.forEach((id) => {
+      const c = document.createElement('canvas'); const pt = id.startsWith('pt_'); c.width = pt ? 360 : 960; c.height = pt ? 480 : 640;
+      const t0 = performance.now(); SR.Art.drawInto(c, id); const ms = (performance.now() - t0).toFixed(0);
+      const f = document.createElement('figure'); f.append(c); const cap = document.createElement('figcaption'); cap.textContent = id + ' · ' + ms + 'ms'; f.append(cap); g.append(f);
+    });
+  });
+</script></body></html>

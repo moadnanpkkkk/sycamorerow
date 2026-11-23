@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'">
+  <title>Sycamore Row</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div id="app">
+    <div id="paper" aria-hidden="true"></div>
+    <canvas id="motes" aria-hidden="true"></canvas>
+    <main id="screen" aria-live="polite"></main>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <!-- core -->
+  <script src="src/util.js"></script>
+  <script src="src/story.js"></script>
+  <script src="src/state.js"></script>
+  <script src="src/audio.js"></script>
+  <!-- art -->
+  <script src="src/art/kit.js"></script>
+  <script src="src/art/people.js"></script>
+  <script src="src/art/render.js"></script>
+  <script src="src/art/scenes.js"></script>
+  <script src="src/art/scenes2.js"></script>
+  <!-- interface -->
+  <script src="src/ornaments.js"></script>
+  <script src="src/ui.js"></script>
+  <script src="src/screens.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
